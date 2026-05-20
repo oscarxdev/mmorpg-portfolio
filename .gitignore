@@ -26,6 +26,9 @@ pnpm-debug.log*
 .vscode/
 .vs/
 
+# Claude Code
+.claude/
+
 # Windows Thumbnail cache
 Thumbs.db
 ehthumbs.db

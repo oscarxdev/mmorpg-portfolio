@@ -13,21 +13,9 @@
   <!-- Background circle -->
   <circle cx="16" cy="16" r="15" fill="url(#grad2)" stroke="url(#grad1)" stroke-width="2"/>
 
-  <!-- Sword blade -->
-  <path d="M16 4 L18 14 L14 14 Z" fill="url(#grad1)"/>
+  <!-- Letter O - main mark -->
+  <circle cx="16" cy="16" r="7" fill="none" stroke="url(#grad1)" stroke-width="2.8"/>
 
-  <!-- Sword guard -->
-  <rect x="12" y="14" width="8" height="2" fill="url(#grad1)"/>
-
-  <!-- Sword handle -->
-  <rect x="15" y="16" width="2" height="8" fill="url(#grad1)"/>
-
-  <!-- Sword pommel -->
-  <circle cx="16" cy="26" r="2" fill="url(#grad1)"/>
-
-  <!-- Decorative gem -->
-  <circle cx="16" cy="10" r="1.5" fill="#ef4444"/>
-
-  <!-- Letter K integrated into design -->
-  <path d="M6 8 L8 8 L8 12 L11 8 L13 8 L10 12 L13 16 L11 16 L8 12 L8 16 L6 16 Z" fill="url(#grad1)" opacity="0.8"/>
+  <!-- Inner accent -->
+  <circle cx="16" cy="16" r="2.5" fill="url(#grad1)" opacity="0.85"/>
 </svg>

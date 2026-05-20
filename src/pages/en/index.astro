@@ -8,23 +8,20 @@ import { fetchGitHubStats } from "@/lib/github";
 
 const { t } = useTranslation("en");
 
-// Obtener estadísticas reales de GitHub
 let githubStats;
 try {
-  githubStats = await fetchGitHubStats("kirii86");
+  githubStats = await fetchGitHubStats("oscarcodedev");
 } catch (error) {
   console.error("Error fetching GitHub stats:", error);
-  // Datos por defecto en caso de error
   githubStats = {
-    yearsOfExperience: 3,
-    totalProjects: 15,
-    technologiesUsed: ["JavaScript", "TypeScript", "Vue", "React"],
+    yearsOfExperience: 1,
+    totalProjects: 0,
+    technologiesUsed: [],
     totalStars: 0,
     totalForks: 0,
   };
 }
 
-// Estadísticas para mostrar
 const stats = {
   experience: githubStats.yearsOfExperience.toString(),
   projects: githubStats.totalProjects.toString(),
@@ -33,20 +30,17 @@ const stats = {
 ---
 
 <Layout
-  title="KiriDev - Frontend Developer Portfolio"
-  description="KiriDev's portfolio, frontend developer specialized in React, Vue, Astro and modern technologies. Discover my projects and web development experience."
+  title="OscarDev - Frontend Developer Portfolio"
+  description="OscarDev's portfolio, frontend developer specialized in Astro, React, TypeScript and expanding into backend with Go."
   lang="en"
   type="website"
 >
   <Navbar lang="en" currentPath="/en" />
 
-  <!-- Hero Section -->
   <main
     class="min-h-screen flex items-center justify-center relative overflow-hidden pt-28 pb-8"
   >
-    <!-- Animated background elements -->
     <div class="absolute inset-0 z-0">
-      <!-- Floating orbs -->
       <div
         class="absolute top-1/4 left-1/4 w-32 h-32 bg-yellow-400/20 rounded-full blur-xl animate-float"
       >
@@ -64,7 +58,6 @@ const stats = {
     </div>
 
     <div class="container mx-auto px-6 text-center relative z-10">
-      <!-- Main title with MMORPG styling -->
       <div class="mb-8">
         <h1 class="text-4xl md:text-6xl font-cinzel font-bold mb-4">
           <span
@@ -78,7 +71,6 @@ const stats = {
           <h2 class="text-2xl md:text-3xl font-orbitron text-gray-300 mb-4">
             {t.home.subtitle}
           </h2>
-          <!-- Decorative lines -->
           <div
             class="absolute -left-16 top-1/2 w-12 h-px bg-gradient-to-r from-transparent to-yellow-400"
           >
@@ -90,14 +82,13 @@ const stats = {
         </div>
       </div>
 
-      <!-- Character stats-style info -->
+      <!-- Stats panel -->
       <div class="mb-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <!-- Experience stat -->
           <div class="mmorpg-card group cursor-pointer">
             <div
               class="w-12 h-12 mb-4 text-yellow-400 mx-auto glow-effect"
-              set:html={getIcon("sword")}
+              set:html={getIcon("character")}
             />
             <div class="text-2xl font-orbitron font-bold text-yellow-400">
               {stats.experience}+
@@ -107,12 +98,11 @@ const stats = {
             </div>
           </div>
 
-          <!-- Projects stat -->
           <div class="mmorpg-card group cursor-pointer">
             <div class="text-3xl mb-2 text-orange-400 glow-effect-accent">
               <div
                 class="w-8 h-8 text-orange-400"
-                set:html={getIcon("castle")}
+                set:html={getIcon("code")}
               />
             </div>
             <div class="text-2xl font-orbitron font-bold text-orange-400">
@@ -123,7 +113,6 @@ const stats = {
             </div>
           </div>
 
-          <!-- Technologies stat -->
           <div class="mmorpg-card group cursor-pointer">
             <div class="text-3xl mb-2 text-yellow-400 glow-effect-accent">
               <div class="w-8 h-8 text-yellow-400" set:html={getIcon("gem")} />
@@ -138,14 +127,12 @@ const stats = {
         </div>
       </div>
 
-      <!-- Description -->
       <p
         class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 font-cinzel leading-relaxed"
       >
         {t.home.description}
       </p>
 
-      <!-- CTA Button -->
       <div class="mb-12">
         <a
           href="/en/about"
@@ -168,81 +155,8 @@ const stats = {
         </a>
       </div>
 
-      <!-- Featured Projects Section -->
-      <div class="mb-12">
-        <h2 class="text-3xl font-cinzel font-bold text-center mb-6">
-          <span
-            class="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent"
-          >
-            Featured Projects
-          </span>
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <!-- FireMoss Project -->
-          <div
-            class="mmorpg-card group hover:scale-105 transition-transform duration-300"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="w-8 h-8 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center mr-3"
-              >
-                <div class="w-4 h-4 text-white" set:html={getIcon("castle")} />
-              </div>
-              <h3 class="font-orbitron font-bold text-yellow-400 text-lg">
-                FireMoss
-              </h3>
-            </div>
-            <p class="text-gray-300 mb-4 font-cinzel">
-              Innovative web platform for multimedia content management with
-              modern interface and advanced functionalities.
-            </p>
-            <div class="flex space-x-3">
-              <a
-                href="https://www.firemoss.xyz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex-1 mmorpg-button text-center text-sm py-2"
-              >
-                View Project
-              </a>
-            </div>
-          </div>
-
-          <!-- RealmVerse Project -->
-          <div
-            class="mmorpg-card group hover:scale-105 transition-transform duration-300"
-          >
-            <div class="flex items-center mb-4">
-              <div
-                class="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mr-3"
-              >
-                <div class="w-4 h-4 text-white" set:html={getIcon("gem")} />
-              </div>
-              <h3 class="font-orbitron font-bold text-yellow-400 text-lg">
-                RealmVerse
-              </h3>
-            </div>
-            <p class="text-gray-300 mb-4 font-cinzel">
-              Interactive digital universe that combines gaming and cutting-edge
-              web technology for immersive experiences.
-            </p>
-            <div class="flex space-x-3">
-              <a
-                href="https://realmverse.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex-1 mmorpg-button text-center text-sm py-2"
-              >
-                View Project
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Tech Stack Section -->
-      <div class="mb-8">
+      <div class="mb-8 mt-16">
         <h2
           class="text-2xl font-cinzel font-bold text-center mb-6 text-yellow-400"
         >
@@ -257,9 +171,9 @@ const stats = {
               "React",
               "Vue",
               "Node.js",
-              "Python",
-              "CSS",
+              "Go",
               "Astro",
+              "TailwindCSS",
             ].map((tech) => (
               <div class="flex items-center space-x-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-yellow-400/30 hover:border-yellow-400 transition-colors">
                 <div
@@ -280,17 +194,14 @@ const stats = {
   import { gsap } from "gsap";
 
   document.addEventListener("DOMContentLoaded", () => {
-    // GSAP animations
     const tl = gsap.timeline();
 
-    // Animate main title
     tl.from("h1", {
       duration: 1.5,
       y: 50,
       opacity: 0,
       ease: "power3.out",
     })
-      // Animate subtitle
       .from(
         "h2",
         {
@@ -301,7 +212,6 @@ const stats = {
         },
         "-=0.8"
       )
-      // Animate stats cards
       .from(
         ".mmorpg-card",
         {
@@ -313,7 +223,6 @@ const stats = {
         },
         "-=0.5"
       )
-      // Animate description
       .from(
         "p",
         {
@@ -324,7 +233,6 @@ const stats = {
         },
         "-=0.4"
       )
-      // Animate CTA button
       .from(
         "#enter-realm-btn",
         {
@@ -336,7 +244,6 @@ const stats = {
         "-=0.3"
       );
 
-    // Parallax effect for floating orbs
     document.addEventListener("mousemove", (e) => {
       const orbs = document.querySelectorAll(".animate-float");
       const mouseX = e.clientX / window.innerWidth;

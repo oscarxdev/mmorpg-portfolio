@@ -8,8 +8,8 @@ const { t } = useTranslation("en");
 ---
 
 <Layout
-  title="Contact KiriDev - Freelance Frontend Developer"
-  description="Contact KiriDev for frontend development projects. Available for freelance work, consulting and collaborations in React, Vue, Astro and more."
+  title="Contact OscarDev - Freelance Frontend Developer"
+  description="Contact OscarDev for frontend development projects. Available for freelance work, consulting and collaborations in React, Vue, Astro, Go and more."
   lang="en"
   type="website"
 >
@@ -42,7 +42,7 @@ const { t } = useTranslation("en");
             <h2
               class="text-2xl font-cinzel font-bold text-yellow-400 mb-8 flex items-center"
             >
-              <span class="text-2xl mr-3">📬</span>
+              <div class="w-6 h-6 mr-3 text-yellow-400" set:html={getIcon("message")} />
               {t.contact.form.title}
             </h2>
 
@@ -146,7 +146,7 @@ const { t } = useTranslation("en");
               <h2
                 class="text-2xl font-cinzel font-bold text-yellow-400 mb-6 flex items-center"
               >
-                <span class="text-2xl mr-3">ℹ️</span>
+                <div class="w-6 h-6 mr-3 text-yellow-400" set:html={getIcon("character")} />
                 {t.contact.info.title}
               </h2>
 
@@ -190,13 +190,13 @@ const { t } = useTranslation("en");
               <h2
                 class="text-2xl font-cinzel font-bold text-yellow-400 mb-6 flex items-center"
               >
-                <span class="text-2xl mr-3">🌐</span>
+                <div class="w-6 h-6 mr-3 text-yellow-400" set:html={getIcon("github")} />
                 {t.contact.social.title}
               </h2>
 
               <div class="grid grid-cols-2 gap-4">
                 <a
-                  href="https://github.com/kirii86"
+                  href="https://github.com/oscarcodedev"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="flex items-center space-x-3 p-4 bg-gray-900/30 rounded-lg border border-gray-700 hover:border-yellow-400 transition-all duration-300 group"
@@ -244,7 +244,7 @@ const { t } = useTranslation("en");
               <h2
                 class="text-2xl font-cinzel font-bold text-yellow-400 mb-6 flex items-center"
               >
-                <span class="text-2xl mr-3">⏰</span>
+                <div class="w-6 h-6 mr-3 text-yellow-400" set:html={getIcon("scroll")} />
                 {t.contact.response.title}
               </h2>
               <p class="text-gray-300 font-cinzel leading-relaxed">

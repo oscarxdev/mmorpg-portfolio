@@ -14,11 +14,11 @@ const { lang = 'es', currentPath = '/' } = Astro.props;
 const { t } = useTranslation(lang);
 
 const navItems = [
-  { href: lang === 'es' ? '/' : '/en', label: t.nav.home, icon: 'sword' },
-  { href: lang === 'es' ? '/about' : '/en/about', label: t.nav.about, icon: 'shield' },
-  { href: lang === 'es' ? '/projects' : '/en/projects', label: t.nav.projects, icon: 'castle' },
+  { href: lang === 'es' ? '/' : '/en', label: t.nav.home, icon: 'character' },
+  { href: lang === 'es' ? '/about' : '/en/about', label: t.nav.about, icon: 'book' },
+  { href: lang === 'es' ? '/projects' : '/en/projects', label: t.nav.projects, icon: 'code' },
   { href: lang === 'es' ? '/resume' : '/en/resume', label: t.nav.resume, icon: 'scroll' },
-  { href: lang === 'es' ? '/contact' : '/en/contact', label: t.nav.contact, icon: 'gem' },
+  { href: lang === 'es' ? '/contact' : '/en/contact', label: t.nav.contact, icon: 'mail' },
 ];
 ---
 
@@ -29,13 +29,13 @@ const navItems = [
       <a href={lang === 'es' ? '/' : '/en'} class="flex items-center space-x-3 group">
         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-yellow-400/50 group-hover:border-yellow-400 transition-all duration-300 glow-effect group-hover:glow-effect-secondary">
           <img
-            src="https://github.com/kirii86.png"
-            alt="KiriDev Avatar"
+            src="https://github.com/oscarcodedev.png"
+            alt="OscarDev Avatar"
             class="w-full h-full object-cover"
             loading="lazy"
           />
         </div>
-        <span class="font-cinzel text-xl font-bold text-glow-sm">KiriDev</span>
+        <span class="font-cinzel text-xl font-bold text-glow-sm">OscarDev</span>
       </a>
 
       <!-- Desktop Navigation -->

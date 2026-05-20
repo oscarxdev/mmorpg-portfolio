@@ -9,8 +9,8 @@ const { t } = useTranslation("en");
 ---
 
 <Layout
-  title="KiriDev Resume - Frontend Developer Experience"
-  description="KiriDev's resume. Professional experience in frontend development, technical skills, academic background and featured projects."
+  title="OscarDev Resume - Frontend Developer Experience"
+  description="Oscar's (OscarDev) resume. Professional experience in frontend development, technical skills, academic background and featured projects."
   lang="en"
   type="profile"
 >
@@ -75,10 +75,7 @@ const { t } = useTranslation("en");
             </h2>
           </div>
           <p class="text-gray-300 text-lg leading-relaxed font-cinzel">
-            Passionate about creating attractive and functional user experiences
-            using the latest technologies. My goal is to optimize the speed and
-            scalability of web applications, ensuring excellent performance on
-            both mobile devices and desktop.
+            {t.resume.summary.description}
           </p>
         </section>
 
@@ -112,17 +109,10 @@ const { t } = useTranslation("en");
                 >
               </div>
               <ul class="text-gray-300 space-y-2 font-cinzel">
-                <li>• Development of modern and responsive user interfaces</li>
-                <li>
-                  • Application of best practices in web design and development
-                </li>
-                <li>
-                  • Collaboration with other developers on open source projects
-                </li>
-                <li>
-                  • Continuous improvement of technical and methodological
-                  skills
-                </li>
+                <li>• Development of modern, responsive interfaces with Astro, React and TypeScript</li>
+                <li>• Best practices in design, accessibility and web performance</li>
+                <li>• Open source contributions and code review</li>
+                <li>• Continuous learning and exploration of new stack technologies</li>
               </ul>
             </div>
 
@@ -134,7 +124,7 @@ const { t } = useTranslation("en");
               </div>
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-yellow-400 font-orbitron">
-                  Roleplay Server Developer
+                  Game Server Plugin Developer
                 </h3>
                 <p class="text-gray-400 font-orbitron">Independent</p>
                 <span class="text-sm text-gray-500 font-orbitron"
@@ -142,13 +132,10 @@ const { t } = useTranslation("en");
                 >
               </div>
               <ul class="text-gray-300 space-y-2 font-cinzel">
-                <li>
-                  • Development and management of servers for FiveM, DayZ, Rust,
-                  Last Oasis and Minecraft
-                </li>
-                <li>• Creation of immersive and personalized experiences</li>
-                <li>• Promoting interaction and fun in virtual environments</li>
-                <li>• Implementation of complex roleplay systems</li>
+                <li>• Plugin development in C# and Lua for Rust, FiveM, DayZ and Last Oasis servers</li>
+                <li>• Design of admin systems and custom server-side logic</li>
+                <li>• Performance optimization and online community management</li>
+                <li>• Integration with external APIs and databases</li>
               </ul>
             </div>
 
@@ -168,12 +155,10 @@ const { t } = useTranslation("en");
                 >
               </div>
               <ul class="text-gray-300 space-y-2 font-cinzel">
-                <li>
-                  • Creation and management of bots using Python and JavaScript
-                </li>
-                <li>• Design of automated functionalities for communities</li>
-                <li>• Innovative solutions for moderation and entertainment</li>
-                <li>• Enhancement of user experience on Discord servers</li>
+                <li>• Multi-purpose bots built with Node.js and Discord.js</li>
+                <li>• Automated features (moderation, economy, integrations)</li>
+                <li>• Web dashboards for configuration and metrics</li>
+                <li>• REST API development and database management</li>
               </ul>
             </div>
 
@@ -208,7 +193,7 @@ const { t } = useTranslation("en");
             <div
               class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-4"
             >
-              <div class="text-black" set:html={getIcon("crown")} />
+              <div class="text-black" set:html={getIcon("book")} />
             </div>
             <h2 class="text-3xl font-cinzel font-bold text-yellow-400">
               {t.resume.education.title}
@@ -280,7 +265,7 @@ const { t } = useTranslation("en");
             <div
               class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-4"
             >
-              <div class="text-black" set:html={getIcon("sword")} />
+              <div class="text-black" set:html={getIcon("code")} />
             </div>
             <h2 class="text-3xl font-cinzel font-bold text-yellow-400">
               {t.resume.skills.title}
@@ -291,7 +276,7 @@ const { t } = useTranslation("en");
             <!-- Frontend Skills -->
             <div>
               <h3 class="text-xl font-bold text-yellow-400 mb-6 font-orbitron">
-                Frontend Development
+                Frontend
               </h3>
               <div class="space-y-4">
                 {
@@ -303,7 +288,7 @@ const { t } = useTranslation("en");
                     },
                     { name: "React/Vue.js", level: 4, icon: "React" },
                     { name: "TypeScript", level: 4, icon: "TypeScript" },
-                    { name: "Astro/Next.js", level: 3, icon: "Astro" },
+                    { name: "Astro/Next.js", level: 4, icon: "Astro" },
                     { name: "TailwindCSS", level: 5, icon: "TailwindCSS" },
                   ].map((skill) => (
                     <div class="skill-item">
@@ -345,11 +330,12 @@ const { t } = useTranslation("en");
               <div class="space-y-4">
                 {
                   [
+                    { name: "Go", level: 2, icon: "Go" },
                     { name: "Node.js", level: 3, icon: "Node.js" },
                     { name: "Git/GitHub", level: 4, icon: "Git" },
-                    { name: "Databases", level: 2, icon: "MongoDB" },
+                    { name: "Databases", level: 3, icon: "MongoDB" },
                     { name: "Docker", level: 2, icon: "Docker" },
-                    { name: "APIs/REST", level: 3, icon: "JavaScript" },
+                    { name: "APIs/REST", level: 4, icon: "JavaScript" },
                   ].map((skill) => (
                     <div class="skill-item">
                       <div class="flex justify-between items-center mb-2">
@@ -390,7 +376,7 @@ const { t } = useTranslation("en");
             <div
               class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-4"
             >
-              <div class="text-black" set:html={getIcon("castle")} />
+              <div class="text-black" set:html={getIcon("message")} />
             </div>
             <h2 class="text-3xl font-cinzel font-bold text-yellow-400">
               {t.resume.languages.title}

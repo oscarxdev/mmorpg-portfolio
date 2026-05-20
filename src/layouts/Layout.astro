@@ -1,6 +1,6 @@
 ---
 import "@/styles/global.css";
-import { type Language } from "@/i18n/translations";
+import { type Language, translations } from "@/i18n/translations";
 
 export interface Props {
   title: string;
@@ -13,32 +13,32 @@ export interface Props {
 
 const {
   title,
-  description = "KiriDev - Portfolio de Desarrollador Frontend especializado en experiencias web inmersivas con React, Vue, Astro y tecnologías modernas",
+  description = "OscarDev - Portfolio de desarrollador frontend especializado en Astro, React, TypeScript y expandiéndose al backend con Go.",
   lang = "es",
   image = "/og-image.svg",
   type = "website",
   canonicalURL = new URL(Astro.url.pathname, Astro.site),
 } = Astro.props;
 
-// SEO data based on language
 const seoData = {
   es: {
-    siteName: "KiriDev Portfolio",
-    author: "KiriDev",
-    keywords: "desarrollador frontend, react, vue, astro, javascript, typescript, tailwindcss, portfolio, desarrollo web, programador, españa",
-    twitterHandle: "@KiriDev",
+    siteName: "OscarDev Portfolio",
+    author: "OscarDev",
+    keywords: "desarrollador frontend, react, vue, astro, javascript, typescript, go, tailwindcss, portfolio, desarrollo web, programador, españa",
+    twitterHandle: "@OscarDev",
   },
   en: {
-    siteName: "KiriDev Portfolio",
-    author: "KiriDev",
-    keywords: "frontend developer, react, vue, astro, javascript, typescript, tailwindcss, portfolio, web development, programmer, spain",
-    twitterHandle: "@KiriDev",
+    siteName: "OscarDev Portfolio",
+    author: "OscarDev",
+    keywords: "frontend developer, react, vue, astro, javascript, typescript, go, tailwindcss, portfolio, web development, programmer, spain",
+    twitterHandle: "@OscarDev",
   }
 };
 
 const currentSeo = seoData[lang];
-const fullTitle = title.includes("KiriDev") ? title : `${title} | ${currentSeo.siteName}`;
+const fullTitle = title.includes("OscarDev") ? title : `${title} | ${currentSeo.siteName}`;
 const fullImageURL = new URL(image, Astro.site);
+const loadingText = translations[lang].loading;
 ---
 
 <!doctype html>
@@ -101,13 +101,13 @@ const fullImageURL = new URL(image, Astro.site);
         JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          "name": "KiriDev",
+          "name": "OscarDev",
           "jobTitle": "Frontend Developer",
           "description": description,
           "url": Astro.site,
           "image": fullImageURL,
           "sameAs": [
-            "https://github.com/kirii86",
+            "https://github.com/oscarcodedev",
             "https://linkedin.com/in/kiridev"
           ],
           "knowsAbout": [
@@ -116,6 +116,7 @@ const fullImageURL = new URL(image, Astro.site);
             "React",
             "Vue.js",
             "Astro",
+            "Go",
             "TailwindCSS",
             "Frontend Development",
             "Web Development"
@@ -169,7 +170,7 @@ const fullImageURL = new URL(image, Astro.site);
           </div>
         </div>
         <p class="mt-4 text-xl font-cinzel text-yellow-400 animate-pulse">
-          Cargando el Reino...
+          {loadingText}
         </p>
       </div>
     </div>

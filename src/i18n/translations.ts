@@ -2,37 +2,37 @@ export const translations = {
   es: {
     nav: {
       home: "Inicio",
-      about: "Acerca de",
+      about: "Sobre Mí",
       projects: "Proyectos",
-      resume: "CV",
+      resume: "Currículum",
       contact: "Contacto",
     },
     home: {
-      welcome: "Bienvenido al Reino KiriDev",
-      subtitle: "Frontend Developer en progreso hacia el Backend",
+      welcome: "Hola, soy OscarDev",
+      subtitle: "Frontend Developer expandiéndose al Backend con Go",
       description:
-        "Desarrollador frontend especializado en crear experiencias web inmersivas y funcionales. Actualmente expandiendo mis habilidades hacia el desarrollo backend.",
-      enterButton: "Entrar al Reino",
+        "Desarrollador frontend especializado en crear interfaces modernas y funcionales con tecnologías como Astro, React y TypeScript. Actualmente ampliando mis habilidades hacia el desarrollo backend con Go.",
+      enterButton: "Conóceme",
       stats: {
         experience: "Años de Experiencia",
-        projects: "Proyectos Completados",
-        technologies: "Tecnologías Dominadas",
+        projects: "Proyectos Públicos",
+        technologies: "Tecnologías",
         stars: "Estrellas en GitHub",
         forks: "Forks en GitHub",
       },
     },
     about: {
-      title: "Perfil del Desarrollador",
+      title: "Sobre Mí",
       description:
-        "Soy KiriDev, un desarrollador frontend apasionado por crear interfaces de usuario excepcionales. Mi viaje comenzó con curiosidad por la web y ha evolucionado hacia una dedicación completa al desarrollo.",
-      skills: "Habilidades de Combate",
-      tools: "Arsenal de Herramientas",
-      experience: "Experiencia de Batalla",
-      learning: "Actualmente Aprendiendo",
+        "Soy Oscar, desarrollador web apasionado por construir interfaces excepcionales y, cada vez más, sistemas robustos en backend. Mi camino comenzó por curiosidad y se ha convertido en una dedicación constante al desarrollo de software.",
+      skills: "Habilidades Técnicas",
+      tools: "Herramientas",
+      experience: "Experiencia",
+      learning: "Aprendiendo Actualmente",
     },
     projects: {
-      title: "Arsenal de Proyectos",
-      subtitle: "Una colección de mis aventuras en el desarrollo web",
+      title: "Proyectos",
+      subtitle: "Una selección de lo que he construido y mantengo",
       viewProject: "Ver Proyecto",
       viewCode: "Ver Código",
       viewAll: "Ver todos los proyectos",
@@ -44,13 +44,13 @@ export const translations = {
       },
     },
     resume: {
-      title: "Pergamino de Experiencia",
+      title: "Currículum",
       subtitle: "Mi trayectoria profesional y habilidades técnicas",
       download: "Descargar CV",
       summary: {
         title: "Resumen Profesional",
         description:
-          "Desarrollador frontend apasionado con experiencia en tecnologías modernas, enfocado en la creación de interfaces de usuario excepcionales y experiencias web inmersivas. Actualmente expandiendo conocimientos hacia el desarrollo backend.",
+          "Desarrollador frontend con experiencia en tecnologías modernas, enfocado en crear interfaces de usuario de calidad y experiencias web rápidas. Actualmente ampliando conocimientos hacia desarrollo backend con Go.",
       },
       experience: {
         title: "Experiencia Profesional",
@@ -71,8 +71,8 @@ export const translations = {
       },
     },
     contact: {
-      title: "Establecer Comunicación",
-      subtitle: "Envía un mensaje a través del portal de comunicación",
+      title: "Contacto",
+      subtitle: "¿Tienes un proyecto en mente? Hablemos.",
       form: {
         title: "Enviar Mensaje",
         name: "Nombre",
@@ -97,15 +97,15 @@ export const translations = {
         description:
           "Normalmente respondo en un plazo de 24-48 horas. Para proyectos urgentes, puedes contactarme directamente por email.",
       },
-      success: "Mensaje enviado exitosamente",
+      success: "Mensaje enviado correctamente",
       error: "Error al enviar el mensaje",
     },
     theme: {
-      light: "Modo Día",
-      dark: "Modo Noche",
+      light: "Modo Claro",
+      dark: "Modo Oscuro",
       toggle: "Cambiar Tema",
     },
-    loading: "Cargando el Reino...",
+    loading: "Cargando...",
   },
   en: {
     nav: {
@@ -116,31 +116,31 @@ export const translations = {
       contact: "Contact",
     },
     home: {
-      welcome: "Welcome to the Digital Realm",
-      subtitle: "Frontend Developer progressing towards Backend",
+      welcome: "Hi, I'm OscarDev",
+      subtitle: "Frontend Developer expanding into Backend with Go",
       description:
-        "Frontend developer specialized in creating immersive and functional web experiences. Currently expanding my skills towards backend development.",
-      enterButton: "Enter the Realm",
+        "Frontend developer focused on building modern, functional interfaces with Astro, React and TypeScript. Currently expanding my skills towards backend development with Go.",
+      enterButton: "Get to know me",
       stats: {
         experience: "Years of Experience",
-        projects: "Completed Projects",
-        technologies: "Technologies Mastered",
+        projects: "Public Projects",
+        technologies: "Technologies",
         stars: "GitHub Stars",
         forks: "GitHub Forks",
       },
     },
     about: {
-      title: "Developer Profile",
+      title: "About Me",
       description:
-        "I am KiriDev, a frontend developer passionate about creating exceptional user interfaces. My journey started with curiosity about the web and has evolved into a complete dedication to development.",
-      skills: "Combat Skills",
-      tools: "Tools Arsenal",
-      experience: "Battle Experience",
+        "I'm Oscar, a developer passionate about building exceptional interfaces and, increasingly, robust backend systems. What started as curiosity has become a constant dedication to software development.",
+      skills: "Technical Skills",
+      tools: "Tools",
+      experience: "Experience",
       learning: "Currently Learning",
     },
     projects: {
-      title: "Project Arsenal",
-      subtitle: "A collection of my adventures in web development",
+      title: "Projects",
+      subtitle: "A selection of things I've built and maintain",
       viewProject: "View Project",
       viewCode: "View Code",
       viewAll: "View all projects",
@@ -152,13 +152,13 @@ export const translations = {
       },
     },
     resume: {
-      title: "Experience Scroll",
+      title: "Resume",
       subtitle: "My professional journey and technical skills",
       download: "Download Resume",
       summary: {
         title: "Professional Summary",
         description:
-          "Passionate frontend developer with experience in modern technologies, focused on creating exceptional user interfaces and immersive web experiences. Currently expanding knowledge towards backend development.",
+          "Frontend developer with experience in modern technologies, focused on building quality user interfaces and fast web experiences. Currently expanding knowledge towards backend development with Go.",
       },
       experience: {
         title: "Professional Experience",
@@ -174,13 +174,13 @@ export const translations = {
       },
       sections: {
         experience: "Professional Experience",
-        education: "Academic Formation",
+        education: "Education",
         skills: "Technical Skills",
       },
     },
     contact: {
-      title: "Establish Communication",
-      subtitle: "Send a message through the communication portal",
+      title: "Contact",
+      subtitle: "Got a project in mind? Let's talk.",
       form: {
         title: "Send Message",
         name: "Name",
@@ -209,11 +209,11 @@ export const translations = {
       error: "Error sending message",
     },
     theme: {
-      light: "Day Mode",
-      dark: "Night Mode",
+      light: "Light Mode",
+      dark: "Dark Mode",
       toggle: "Toggle Theme",
     },
-    loading: "Loading the Realm...",
+    loading: "Loading...",
   },
 } as const;
 

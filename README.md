@@ -1,105 +1,66 @@
-# 🏰 KiriDev Portfolio - MMORPG Theme
+# OscarDev Portfolio
 
-A personal portfolio with MMORPG-inspired design, built with Astro 5.10+ and TailwindCSS 4.
+Portfolio personal de Oscar (OscarDev), desarrollador frontend expandiéndose al backend con Go.
 
-## ✨ Features
+## Stack
 
-- 🎮 **MMORPG Design**: Game-inspired interface with glow effects, HUD, and fantasy aesthetics
-- 🌍 **Native i18n**: Full support for Spanish and English using Astro's native functionality
-- 🎨 **TailwindCSS 4**: Modern styles with custom classes for gaming theme
-- 🎬 **GSAP Animations**: Smooth animations and parallax effects
-- 📱 **Responsive**: Fully responsive and accessible design
-- 🌓 **Dark/Light Theme**: Game-style theme toggle
-- 🐙 **GitHub Integration**: Shows real projects from GitHub API
-- 🚀 **Cloudflare Pages**: Deployed on Cloudflare with SSR
+- **Framework**: Astro v5 (SSR) con TypeScript
+- **Estilos**: TailwindCSS v4
+- **Animaciones**: GSAP + ScrollTrigger
+- **Despliegue**: Cloudflare Pages
+- **Package manager**: pnpm
 
-## 🛠️ Tech Stack
+## Características
 
-- **Framework**: Astro v5.10+ with TypeScript
-- **Styles**: TailwindCSS v4 + Custom CSS
-- **Animations**: GSAP + ScrollTrigger
-- **Deployment**: Cloudflare Pages + SSR
-- **Package Manager**: pnpm
+- Internacionalización nativa con Astro (es / en)
+- Listado de proyectos auto-actualizado desde la API de GitHub
+- Theme toggle (claro / oscuro)
+- SEO (Open Graph, Twitter Card, JSON-LD)
+- Sitemap automático
+- Optimizado para Cloudflare Pages (SSR)
 
-## 🚀 Installation and Usage
+## Instalación
 
-1. **Clone the repository**
+```bash
+git clone https://github.com/oscarcodedev/mmorpg-portfolio.git
+cd mmorpg-portfolio
+pnpm install
+```
 
-   ```bash
-   git clone https://github.com/kirii86/mmorpg-portfolio.git
-   cd mmorpg-portfolio
-   ```
+Copia `.env.example` a `.env` y rellena tu `GITHUB_TOKEN` (Personal Access Token con scope `public_repo`). Sin token la API de GitHub limita a 60 peticiones por hora.
 
-2. **Install dependencies**
+```bash
+cp .env.example .env
+```
 
-   ```bash
-   pnpm install
-   ```
+## Scripts
 
-3. **Run in development**
+```bash
+pnpm dev              # servidor de desarrollo
+pnpm build            # build de producción
+pnpm preview          # preview del build
+pnpm deploy           # build + deploy a Cloudflare Pages
+```
 
-   ```bash
-   pnpm dev
-   ```
+## Estructura
 
-4. **Build for production**
+- `src/pages/` — páginas (es) y `src/pages/en/` (en)
+- `src/components/` — Navbar, ThemeToggle, LanguageSwitcher
+- `src/layouts/Layout.astro` — layout base + SEO
+- `src/i18n/translations.ts` — copy bilingüe
+- `src/lib/github.ts` — integración con la API de GitHub
+- `src/lib/icons.ts` — biblioteca de iconos SVG
 
-   ```bash
-   pnpm build
-   ```
+## i18n
 
-## 🌐 Internationalization
+- Español: ruta raíz (`/`)
+- Inglés: ruta prefijada (`/en/`)
 
-The site supports two languages:
+Las traducciones viven en [src/i18n/translations.ts](src/i18n/translations.ts) y se consumen con el helper `useTranslation(lang)`.
 
-- **Spanish**: Root path (`/`)
-- **English**: Prefixed path (`/en/`)
+## Contacto
 
-Translations are located in `src/i18n/translations.ts` and used via the `useTranslation()` helper.
-
-## 🎯 Special Features
-
-- **Loading Screen**: Magical animation when loading the site
-- **Parallax Effects**: Elements that respond to mouse movement
-- **Scroll Animations**: Elements animate when entering viewport
-- **Dynamic Theme**: Toggle between day/night mode
-- **GitHub API**: Shows real projects automatically
-- **Responsive**: Optimized for all devices
-
-## 🎮 Design Inspiration
-
-The design is inspired by MMORPG interfaces like:
-
-- World of Warcraft
-- Guild Wars 2
-- Final Fantasy XIV
-- League of Legends
-
-With elements such as:
-
-- Transparent HUD with glowing borders
-- Buttons with hover effects
-- RPG-style progress bars
-- Particle and glow effects
-- Fantasy-themed icons
-
-## 📞 Contact
-
-- **Developer**: KiriDev
-- **GitHub**: [github.com/kirii86](https://github.com/kirii86)
+- **Web**: [kiridev.dev](https://kiridev.dev)
+- **GitHub**: [github.com/oscarcodedev](https://github.com/oscarcodedev)
 - **Email**: [kiridev.contact@gmail.com](mailto:kiridev.contact@gmail.com)
-
-## ⭐ Support the Project
-
-If you like this project, you can support it in the following ways:
-
-- **⭐ Star the Repository**: Give this project a star on GitHub to help others discover it
-- **☕ Buy me a Coffee**: Support development with a small donation via [PayPal](https://paypal.me/botarctic)
-
-Your support helps me continue creating awesome projects like this one! 🚀
-
----
-
-**Made with ❤️ and ⚡ by [kirii86](https://github.com/kirii86)**
-
----
+- **LinkedIn**: [linkedin.com/in/kiridev](https://linkedin.com/in/kiridev)

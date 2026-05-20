@@ -9,8 +9,8 @@ const { t } = useTranslation("es");
 ---
 
 <Layout
-  title="CV KiriDev - Experiencia Desarrollador Frontend"
-  description="Curriculum Vitae de KiriDev. Experiencia profesional en desarrollo frontend, habilidades técnicas, formación académica y proyectos destacados."
+  title="Currículum OscarDev - Experiencia Desarrollador Frontend"
+  description="Currículum Vitae de Oscar (OscarDev). Experiencia profesional en desarrollo frontend, habilidades técnicas, formación académica y proyectos destacados."
   lang="es"
   type="profile"
 >
@@ -75,11 +75,7 @@ const { t } = useTranslation("es");
             </h2>
           </div>
           <p class="text-gray-300 text-lg leading-relaxed font-cinzel">
-            Apasionado por crear experiencias de usuario atractivas y
-            funcionales utilizando las últimas tecnologías. Mi objetivo es
-            optimizar la velocidad y escalabilidad de aplicaciones web,
-            asegurando una performance excelente tanto en dispositivos móviles
-            como en desktop.
+            {t.resume.summary.description}
           </p>
         </section>
 
@@ -114,18 +110,16 @@ const { t } = useTranslation("es");
               </div>
               <ul class="text-gray-300 space-y-2 font-cinzel">
                 <li>
-                  • Desarrollo interfaces de usuario modernas y responsivas
+                  • Desarrollo de interfaces modernas y responsivas con Astro, React y TypeScript
                 </li>
                 <li>
-                  • Aplicación de las mejores prácticas en diseño y desarrollo
-                  web
+                  • Aplicación de buenas prácticas en diseño, accesibilidad y rendimiento web
                 </li>
                 <li>
-                  • Colaboración con otros desarrolladores en proyectos de
-                  código abierto
+                  • Colaboración en proyectos de código abierto y revisión de código
                 </li>
                 <li>
-                  • Mejora continua de habilidades técnicas y metodológicas
+                  • Aprendizaje continuo y exploración de nuevas tecnologías del stack
                 </li>
               </ul>
             </div>
@@ -138,7 +132,7 @@ const { t } = useTranslation("es");
               </div>
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-yellow-400 font-orbitron">
-                  Desarrollador de Servidores de Roleplay
+                  Desarrollador de Plugins y Servidores
                 </h3>
                 <p class="text-gray-400 font-orbitron">Independiente</p>
                 <span class="text-sm text-gray-500 font-orbitron"
@@ -147,14 +141,13 @@ const { t } = useTranslation("es");
               </div>
               <ul class="text-gray-300 space-y-2 font-cinzel">
                 <li>
-                  • Desarrollo y gestión de servidores para FiveM, DayZ, Rust,
-                  Last Oasis y Minecraft
+                  • Desarrollo de plugins en C# y Lua para servidores de juegos (Rust, FiveM, DayZ, Last Oasis)
                 </li>
-                <li>• Creación de experiencias inmersivas y personalizadas</li>
+                <li>• Diseño de sistemas de administración y lógica de servidor</li>
                 <li>
-                  • Fomento de la interacción y diversión en entornos virtuales
+                  • Optimización de rendimiento y gestión de comunidades online
                 </li>
-                <li>• Implementación de sistemas complejos de roleplay</li>
+                <li>• Integración con APIs externas y bases de datos</li>
               </ul>
             </div>
 
@@ -174,15 +167,15 @@ const { t } = useTranslation("es");
                 >
               </div>
               <ul class="text-gray-300 space-y-2 font-cinzel">
-                <li>• Creación y gestión de bots usando Python y JavaScript</li>
+                <li>• Creación de bots multipropósito con Node.js y Discord.js</li>
                 <li>
-                  • Diseño de funcionalidades automatizadas para comunidades
+                  • Diseño de funcionalidades automatizadas (moderación, economía, integraciones)
                 </li>
                 <li>
-                  • Soluciones innovadoras para moderación y entretenimiento
+                  • Dashboards web para configuración y métricas
                 </li>
                 <li>
-                  • Mejora de la experiencia del usuario en servidores Discord
+                  • Desarrollo de APIs REST y manejo de bases de datos
                 </li>
               </ul>
             </div>
@@ -218,7 +211,7 @@ const { t } = useTranslation("es");
             <div
               class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-4"
             >
-              <div class="text-black" set:html={getIcon("crown")} />
+              <div class="text-black" set:html={getIcon("book")} />
             </div>
             <h2 class="text-3xl font-cinzel font-bold text-yellow-400">
               {t.resume.education.title}
@@ -289,7 +282,7 @@ const { t } = useTranslation("es");
             <div
               class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-4"
             >
-              <div class="text-black" set:html={getIcon("sword")} />
+              <div class="text-black" set:html={getIcon("code")} />
             </div>
             <h2 class="text-3xl font-cinzel font-bold text-yellow-400">
               {t.resume.skills.title}
@@ -300,7 +293,7 @@ const { t } = useTranslation("es");
             <!-- Frontend Skills -->
             <div>
               <h3 class="text-xl font-bold text-yellow-400 mb-6 font-orbitron">
-                Desarrollo Frontend
+                Frontend
               </h3>
               <div class="space-y-4">
                 {
@@ -312,7 +305,7 @@ const { t } = useTranslation("es");
                     },
                     { name: "React/Vue.js", level: 4, icon: "React" },
                     { name: "TypeScript", level: 4, icon: "TypeScript" },
-                    { name: "Astro/Next.js", level: 3, icon: "Astro" },
+                    { name: "Astro/Next.js", level: 4, icon: "Astro" },
                     { name: "TailwindCSS", level: 5, icon: "TailwindCSS" },
                   ].map((skill) => (
                     <div class="skill-item">
@@ -354,11 +347,12 @@ const { t } = useTranslation("es");
               <div class="space-y-4">
                 {
                   [
+                    { name: "Go", level: 2, icon: "Go" },
                     { name: "Node.js", level: 3, icon: "Node.js" },
                     { name: "Git/GitHub", level: 4, icon: "Git" },
-                    { name: "Bases de Datos", level: 2, icon: "MongoDB" },
+                    { name: "Bases de Datos", level: 3, icon: "MongoDB" },
                     { name: "Docker", level: 2, icon: "Docker" },
-                    { name: "APIs/REST", level: 3, icon: "JavaScript" },
+                    { name: "APIs/REST", level: 4, icon: "JavaScript" },
                   ].map((skill) => (
                     <div class="skill-item">
                       <div class="flex justify-between items-center mb-2">
@@ -399,7 +393,7 @@ const { t } = useTranslation("es");
             <div
               class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center mr-4"
             >
-              <div class="text-black" set:html={getIcon("castle")} />
+              <div class="text-black" set:html={getIcon("message")} />
             </div>
             <h2 class="text-3xl font-cinzel font-bold text-yellow-400">
               {t.resume.languages.title}
@@ -436,7 +430,6 @@ const { t } = useTranslation("es");
   gsap.registerPlugin(ScrollTrigger);
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Animate sections
     gsap.from(".mmorpg-card", {
       duration: 0.8,
       y: 50,
@@ -450,7 +443,6 @@ const { t } = useTranslation("es");
       },
     });
 
-    // Animate skill bars
     gsap.from(".skill-item", {
       duration: 1,
       x: -50,
@@ -464,7 +456,6 @@ const { t } = useTranslation("es");
       },
     });
 
-    // Animate timeline items
     gsap.from('[class*="border-l-2"]', {
       duration: 0.8,
       x: -30,

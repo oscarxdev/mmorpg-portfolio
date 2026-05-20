@@ -9,8 +9,8 @@ const { t } = useTranslation("es");
 ---
 
 <Layout
-  title="Acerca de KiriDev - Desarrollador Frontend"
-  description="Conoce más sobre KiriDev, desarrollador frontend apasionado por crear interfaces excepcionales. Experiencia en React, Vue, TypeScript y tecnologías modernas."
+  title="Sobre OscarDev - Desarrollador Frontend"
+  description="Conoce más sobre Oscar, desarrollador frontend apasionado por crear interfaces excepcionales. Experiencia en React, Vue, TypeScript y expandiéndose a backend con Go."
   lang="es"
   type="profile"
 >
@@ -34,37 +34,34 @@ const { t } = useTranslation("es");
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <!-- Character Info Panel -->
+        <!-- Profile Info Panel -->
         <div class="mmorpg-card">
           <div class="text-center mb-8">
-            <!-- Avatar/Character -->
+            <!-- Avatar -->
             <div class="w-32 h-32 mx-auto mb-6 relative">
               <div
                 class="w-full h-full rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 p-1"
               >
                 <div
-                  class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center"
+                  class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden"
                 >
-                  <span class="text-4xl font-orbitron font-bold text-yellow-400"
-                    >KD</span
-                  >
+                  <img
+                    src="https://github.com/oscarcodedev.png"
+                    alt="OscarDev"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
-              <!-- Level indicator -->
-              <div
-                class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-400 text-slate-900 px-3 py-1 rounded-full text-sm font-orbitron font-bold"
-              >
-                LVL 3
               </div>
             </div>
 
             <h2 class="text-2xl font-cinzel font-bold text-yellow-400 mb-2">
-              KiriDev
+              OscarDev
             </h2>
             <p class="text-amber-400 font-orbitron">Frontend Developer</p>
           </div>
 
-          <!-- Character Stats -->
+          <!-- Skill bars -->
           <div class="space-y-4" data-skills>
             <div class="flex justify-between items-center skill-bar">
               <div class="flex items-center space-x-2">
@@ -83,12 +80,12 @@ const { t } = useTranslation("es");
 
             <div class="flex justify-between items-center skill-bar">
               <div class="flex items-center space-x-2">
-                <div set:html={getLanguageIcon("React")} />
-                <span class="font-orbitron text-amber-500">React</span>
+                <div set:html={getLanguageIcon("TypeScript")} />
+                <span class="font-orbitron text-blue-400">TypeScript</span>
               </div>
               <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
                 <div
-                  class="bg-gradient-to-r from-amber-500 to-yellow-500 h-2 rounded-full skill-progress"
+                  class="bg-gradient-to-r from-blue-400 to-indigo-400 h-2 rounded-full skill-progress"
                   data-width="85"
                 >
                 </div>
@@ -98,27 +95,12 @@ const { t } = useTranslation("es");
 
             <div class="flex justify-between items-center skill-bar">
               <div class="flex items-center space-x-2">
-                <div set:html={getLanguageIcon("Node.js")} />
-                <span class="font-orbitron text-green-400">Node.js</span>
+                <div set:html={getLanguageIcon("React")} />
+                <span class="font-orbitron text-cyan-400">React</span>
               </div>
               <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
                 <div
-                  class="bg-gradient-to-r from-green-400 to-emerald-400 h-2 rounded-full skill-progress"
-                  data-width="70"
-                >
-                </div>
-              </div>
-              <span class="font-orbitron text-xs text-gray-400">70%</span>
-            </div>
-
-            <div class="flex justify-between items-center skill-bar">
-              <div class="flex items-center space-x-2">
-                <div set:html={getLanguageIcon("TypeScript")} />
-                <span class="font-orbitron text-orange-400">TypeScript</span>
-              </div>
-              <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
-                <div
-                  class="bg-gradient-to-r from-orange-400 to-red-400 h-2 rounded-full skill-progress"
+                  class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full skill-progress"
                   data-width="80"
                 >
                 </div>
@@ -143,51 +125,66 @@ const { t } = useTranslation("es");
 
             <div class="flex justify-between items-center skill-bar">
               <div class="flex items-center space-x-2">
-                <div set:html={getLanguageIcon("Python")} />
-                <span class="font-orbitron text-blue-400">Python</span>
+                <div set:html={getLanguageIcon("Astro")} />
+                <span class="font-orbitron text-orange-400">Astro</span>
               </div>
               <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
                 <div
-                  class="bg-gradient-to-r from-blue-400 to-indigo-400 h-2 rounded-full skill-progress"
-                  data-width="65"
+                  class="bg-gradient-to-r from-orange-400 to-red-400 h-2 rounded-full skill-progress"
+                  data-width="85"
                 >
                 </div>
               </div>
-              <span class="font-orbitron text-xs text-gray-400">65%</span>
+              <span class="font-orbitron text-xs text-gray-400">85%</span>
+            </div>
+
+            <div class="flex justify-between items-center skill-bar">
+              <div class="flex items-center space-x-2">
+                <div set:html={getLanguageIcon("Node.js")} />
+                <span class="font-orbitron text-green-400">Node.js</span>
+              </div>
+              <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-green-400 to-emerald-400 h-2 rounded-full skill-progress"
+                  data-width="70"
+                >
+                </div>
+              </div>
+              <span class="font-orbitron text-xs text-gray-400">70%</span>
+            </div>
+
+            <div class="flex justify-between items-center skill-bar">
+              <div class="flex items-center space-x-2">
+                <div set:html={getLanguageIcon("Go")} />
+                <span class="font-orbitron text-cyan-300">Go</span>
+              </div>
+              <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
+                <div
+                  class="bg-gradient-to-r from-cyan-300 to-sky-400 h-2 rounded-full skill-progress"
+                  data-width="45"
+                >
+                </div>
+              </div>
+              <span class="font-orbitron text-xs text-gray-400">45%</span>
             </div>
 
             <div class="flex justify-between items-center skill-bar">
               <div class="flex items-center space-x-2">
                 <div set:html={getLanguageIcon("CSS")} />
-                <span class="font-orbitron text-cyan-400">CSS</span>
+                <span class="font-orbitron text-purple-400">CSS</span>
               </div>
               <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
                 <div
-                  class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full skill-progress"
+                  class="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full skill-progress"
                   data-width="88"
                 >
                 </div>
               </div>
               <span class="font-orbitron text-xs text-gray-400">88%</span>
             </div>
-
-            <div class="flex justify-between items-center skill-bar">
-              <div class="flex items-center space-x-2">
-                <div set:html={getLanguageIcon("Astro")} />
-                <span class="font-orbitron text-purple-400">Astro</span>
-              </div>
-              <div class="flex-1 mx-4 bg-slate-700 rounded-full h-2">
-                <div
-                  class="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full skill-progress"
-                  data-width="82"
-                >
-                </div>
-              </div>
-              <span class="font-orbitron text-xs text-gray-400">82%</span>
-            </div>
           </div>
 
-          <!-- Currently Learning section in character panel -->
+          <!-- Currently Learning section -->
           <div class="mt-8 pt-6 border-t border-slate-700">
             <h4
               class="text-lg font-cinzel font-bold text-orange-400 mb-4 flex items-center"
@@ -198,9 +195,9 @@ const { t } = useTranslation("es");
             <div class="space-y-3">
               {
                 [
-                  "Backend Development",
+                  "Go (Backend Development)",
                   "Database Design",
-                  "DevOps",
+                  "DevOps & Docker",
                   "System Architecture",
                 ].map((item) => (
                   <div class="flex items-center space-x-3 p-3 rounded-lg border border-orange-400/30 hover:border-orange-400 transition-colors">
@@ -213,42 +210,39 @@ const { t } = useTranslation("es");
           </div>
         </div>
 
-        <!-- Story/Description -->
+        <!-- About description and skills -->
         <div class="space-y-8">
-          <!-- Main description -->
+          <!-- About me -->
           <div class="mmorpg-card">
             <h3
               class="text-2xl font-cinzel font-bold text-yellow-400 mb-4 flex items-center"
             >
-              <div class="text-yellow-400 mr-3" set:html={getIcon("scroll")} />
-              Mi Historia
+              <div class="text-yellow-400 mr-3" set:html={getIcon("character")} />
+              Sobre Mí
             </h3>
             <p class="text-gray-300 leading-relaxed font-cinzel">
-              Hola, soy Oscar, un desarrollador web apasionado con título de
-              Técnico en Sistemas Microinformáticos y Redes de la Universidad de
-              Castilla-La Mancha. Me dedico al desarrollo frontend y me mantengo
-              en constante aprendizaje de las últimas tecnologías y tendencias
-              del sector.
+              Hola, soy Oscar, desarrollador web con título de Técnico en
+              Sistemas Microinformáticos y Redes. Me dedico al desarrollo
+              frontend y mantengo un aprendizaje constante de las últimas
+              tecnologías del sector.
               <br /><br />
-              Creo firmemente en mantener un estilo de vida equilibrado, combinando
-              mi pasión por la programación con actividades físicas para mantenerme
-              saludable y enfocado. Para mí, la programación es una herramienta poderosa
-              para crear soluciones que mejoren la vida de las personas, y siempre
-              estoy dispuesto a asumir nuevos desafíos y proyectos.
+              Actualmente estoy ampliando mis conocimientos hacia el backend con
+              <strong class="text-yellow-400">Go</strong>, buscando dominar todo el
+              stack y poder construir productos completos de principio a fin.
               <br /><br />
-              Me considero una persona tranquila que disfruta de la vida y valora
-              el aprendizaje continuo. Cada día trae nuevas oportunidades para crecer,
-              y estoy comprometido a entregar soluciones de alta calidad que marquen
-              una diferencia real.
+              Creo en mantener un equilibrio entre el código y la vida fuera de
+              la pantalla. Para mí, programar es la herramienta para crear
+              soluciones que aporten valor real, y siempre estoy dispuesto a
+              asumir nuevos retos.
             </p>
           </div>
 
-          <!-- Skills section -->
+          <!-- Skills -->
           <div class="mmorpg-card">
             <h3
               class="text-2xl font-cinzel font-bold text-amber-500 mb-6 flex items-center"
             >
-              <div class="text-amber-500 mr-3" set:html={getIcon("sword")} />
+              <div class="text-amber-500 mr-3" set:html={getIcon("code")} />
               {t.about.skills}
             </h3>
 
@@ -260,9 +254,10 @@ const { t } = useTranslation("es");
                   { name: "React", icon: "React" },
                   { name: "Vue", icon: "Vue" },
                   { name: "Node.js", icon: "Node.js" },
-                  { name: "Python", icon: "Python" },
-                  { name: "CSS", icon: "CSS" },
+                  { name: "Go", icon: "Go" },
                   { name: "Astro", icon: "Astro" },
+                  { name: "TailwindCSS", icon: "TailwindCSS" },
+                  { name: "CSS", icon: "CSS" },
                 ].map((skill) => (
                   <div class="flex items-center space-x-3 p-3 rounded-lg bg-slate-700/50 hover:bg-slate-600/50 transition-colors">
                     <div
@@ -276,7 +271,7 @@ const { t } = useTranslation("es");
             </div>
           </div>
 
-          <!-- Tools Arsenal section -->
+          <!-- Tools -->
           <div class="mmorpg-card">
             <h3
               class="text-2xl font-cinzel font-bold text-cyan-400 mb-6 flex items-center"
@@ -322,7 +317,6 @@ const { t } = useTranslation("es");
   gsap.registerPlugin(ScrollTrigger);
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Animate cards with a cool entrance effect
     gsap.from(".mmorpg-card", {
       duration: 1.2,
       scale: 0.8,
@@ -337,8 +331,6 @@ const { t } = useTranslation("es");
       },
     });
 
-    // Cool skill bars animation with bounce and glow effect
-    const skillProgress = document.querySelectorAll(".skill-progress");
     const skillBars = document.querySelectorAll(".skill-bar");
 
     skillBars.forEach((skillBar, index) => {
@@ -349,11 +341,9 @@ const { t } = useTranslation("es");
       const percentage = skillBar.querySelector(".font-orbitron.text-xs");
       if (!targetWidth) return;
 
-      // Set initial states
       gsap.set(progressBar, { width: "0%", scale: 0.8 });
       if (percentage) gsap.set(percentage, { opacity: 0, scale: 0 });
 
-      // Create timeline for each skill bar
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: skillBar,
@@ -362,7 +352,6 @@ const { t } = useTranslation("es");
         },
       });
 
-      // Animate the skill bar with bounce effect
       tl.to(progressBar, {
         width: `${targetWidth}%`,
         scale: 1,
@@ -370,7 +359,7 @@ const { t } = useTranslation("es");
         ease: "elastic.out(1, 0.5)",
         delay: index * 0.15,
       });
-      // Animate percentage with pop effect
+
       if (percentage) {
         tl.to(
           percentage,
@@ -383,7 +372,7 @@ const { t } = useTranslation("es");
           "-=0.8"
         );
       }
-      // Add a subtle glow pulse
+
       tl.to(
         progressBar,
         {
@@ -397,7 +386,6 @@ const { t } = useTranslation("es");
       );
     });
 
-    // Interactive hover effects with morphing
     skillBars.forEach((skillBar) => {
       const progressBar = skillBar.querySelector(".skill-progress");
 
@@ -436,24 +424,11 @@ const { t } = useTranslation("es");
       });
     });
 
-    // Animate character avatar with floating effect
     const avatar = document.querySelector(".w-32.h-32");
     if (avatar) {
       gsap.to(avatar, {
         y: -10,
         duration: 2,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-    }
-
-    // Animate level indicator with pulse
-    const levelIndicator = document.querySelector(".absolute.-bottom-2");
-    if (levelIndicator) {
-      gsap.to(levelIndicator, {
-        scale: 1.1,
-        duration: 1.5,
         ease: "power2.inOut",
         yoyo: true,
         repeat: -1,
