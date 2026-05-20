@@ -39,6 +39,7 @@ async function fetchGitHubAPI(url: string, token?: string): Promise<Response> {
   const headers: HeadersInit = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "OscarDev-Portfolio",
   };
 
   if (token) {
@@ -46,30 +47,15 @@ async function fetchGitHubAPI(url: string, token?: string): Promise<Response> {
   }
 
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    const response = await fetch(url, { headers });
 
-    const response = await fetch(url, {
-      headers,
-      signal: controller.signal,
-    });
-
-    clearTimeout(timeoutId);
-
-    const remaining = response.headers.get("X-RateLimit-Remaining");
-    const resetTime = response.headers.get("X-RateLimit-Reset");
-
-    if (remaining && parseInt(remaining) < 10) {
-      console.warn(
-        `GitHub API: Only ${remaining} requests remaining. Resets at ${new Date(
-          parseInt(resetTime || "0") * 1000
-        )}`
-      );
+    if (!response.ok) {
+      console.error(`GitHub API error: ${response.status} ${response.statusText} for ${url}`);
     }
 
     return response;
   } catch (error) {
-    console.error("Error in fetchGitHubAPI:", error);
+    console.error(`GitHub API fetch failed for ${url}:`, error);
     return new Response(null, { status: 500, statusText: "Fetch failed" });
   }
 }
