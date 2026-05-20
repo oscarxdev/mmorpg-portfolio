@@ -7,7 +7,8 @@ import { getIcon, getLanguageColor, getLanguageIcon } from '@/lib/icons';
 
 const { t } = useTranslation('en');
 
-const allRepos = await fetchGitHubRepos('oscarcodedev');
+const token = Astro.locals.runtime?.env?.GITHUB_TOKEN || import.meta.env.GITHUB_TOKEN;
+const allRepos = await fetchGitHubRepos('oscarcodedev', token);
 const repos = allRepos
   .filter((repo) => repo.name !== 'oscarcodedev')
   .sort((a, b) => b.stargazers_count - a.stargazers_count);

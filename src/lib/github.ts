@@ -35,14 +35,14 @@ export interface GitHubStats {
   totalForks: number;
 }
 
-async function fetchGitHubAPI(url: string): Promise<Response> {
+async function fetchGitHubAPI(url: string, token?: string): Promise<Response> {
   const headers: HeadersInit = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
   };
 
-  if (typeof process !== "undefined" && process.env?.GITHUB_TOKEN) {
-    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
   }
 
   try {
@@ -75,11 +75,13 @@ async function fetchGitHubAPI(url: string): Promise<Response> {
 }
 
 export async function fetchGitHubRepos(
-  username: string
+  username: string,
+  token?: string
 ): Promise<GitHubRepo[]> {
   try {
     const response = await fetchGitHubAPI(
-      `https://api.github.com/users/${username}/repos?sort=stars&per_page=50&direction=desc`
+      `https://api.github.com/users/${username}/repos?sort=stars&per_page=50&direction=desc`,
+      token
     );
 
     if (!response.ok) {
@@ -96,10 +98,11 @@ export async function fetchGitHubRepos(
   }
 }
 
-export async function fetchGitHubUser(username: string): Promise<GitHubUser> {
+export async function fetchGitHubUser(username: string, token?: string): Promise<GitHubUser> {
   try {
     const response = await fetchGitHubAPI(
-      `https://api.github.com/users/${username}`
+      `https://api.github.com/users/${username}`,
+      token
     );
     if (!response.ok) {
       throw new Error("Failed to fetch user data");
@@ -120,7 +123,7 @@ export async function fetchGitHubUser(username: string): Promise<GitHubUser> {
   }
 }
 
-export async function fetchGitHubStats(username: string): Promise<GitHubStats> {
+export async function fetchGitHubStats(username: string, token?: string): Promise<GitHubStats> {
   try {
     const cacheKey = `github-stats-${username}`;
     if (typeof window !== "undefined" && window.localStorage) {
@@ -135,7 +138,8 @@ export async function fetchGitHubStats(username: string): Promise<GitHubStats> {
     }
 
     const response = await fetchGitHubAPI(
-      `https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`
+      `https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`,
+      token
     );
 
     if (!response.ok) {
@@ -143,7 +147,7 @@ export async function fetchGitHubStats(username: string): Promise<GitHubStats> {
     }
 
     const allRepos: GitHubRepo[] = await response.json();
-    const user = await fetchGitHubUser(username);
+    const user = await fetchGitHubUser(username, token);
 
     const realRepos = allRepos.filter(
       (repo) =>
