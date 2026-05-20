@@ -1,6 +1,5 @@
 ---
 import { type Language } from "@/i18n/translations";
-import { getIcon } from "@/lib/icons";
 
 export interface Props {
   lang: Language;
@@ -9,99 +8,31 @@ export interface Props {
 
 const { lang, currentPath } = Astro.props;
 
-// Generate the opposite language URL
 function getOppositeLanguageUrl(
   currentPath: string,
   currentLang: Language
 ): string {
-  const targetLang = currentLang === "es" ? "en" : "es";
-
   if (currentLang === "es") {
-    // Spanish to English: add /en prefix
     return currentPath === "/" ? "/en" : `/en${currentPath}`;
   } else {
-    // English to Spanish: remove /en prefix
     return currentPath.replace(/^\/en/, "") || "/";
   }
 }
 
 const oppositeUrl = getOppositeLanguageUrl(currentPath, lang);
+const isEnglish = lang === "en";
 ---
 
-<div class="relative group">
-  <button
-    id="language-switcher"
-    class="flex items-center space-x-2 px-3 py-2 rounded-lg border border-yellow-400/30 hover:border-yellow-400 bg-slate-800/50 hover:bg-slate-700/70 transition-all duration-300"
-    aria-label="Cambiar idioma"
-    title="Change language / Cambiar idioma"
-  >
-    <!-- Language flag icon -->
-    <div
-      class="w-4 h-4 flex-shrink-0"
-      set:html={getIcon(lang === "es" ? "spanish" : "english")}
-    />
-    <span class="text-sm font-orbitron text-yellow-400"
-      >{lang.toUpperCase()}</span
-    >
+<a
+  href={oppositeUrl}
+  class="lang-switch group relative flex items-center w-[4.5rem] h-8 rounded-full border border-yellow-400/30 hover:border-yellow-400 bg-slate-800/50 hover:bg-slate-700/70 transition-all duration-300 cursor-pointer"
+  aria-label={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+  title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+>
+  <!-- Labels -->
+  <span class={`absolute left-2.5 text-xs font-orbitron font-medium transition-colors duration-300 ${isEnglish ? 'text-gray-500' : 'text-yellow-400'}`}>ES</span>
+  <span class={`absolute right-2.5 text-xs font-orbitron font-medium transition-colors duration-300 ${isEnglish ? 'text-yellow-400' : 'text-gray-500'}`}>EN</span>
 
-    <!-- Dropdown arrow -->
-    <svg
-      class="w-3 h-3 text-yellow-400 transition-transform group-hover:rotate-180"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-
-  <!-- Dropdown menu -->
-  <div
-    id="language-dropdown"
-    class="absolute top-full right-0 mt-2 w-32 bg-slate-800/90 backdrop-blur-lg border border-yellow-400/30 rounded-lg shadow-xl opacity-0 invisible transition-all duration-200 group-hover:opacity-100 group-hover:visible z-50"
-  >
-    <a
-      href={oppositeUrl}
-      class="flex items-center space-x-3 px-4 py-3 hover:bg-yellow-400/10 transition-colors rounded-lg group/item"
-    >
-      <div
-        class="w-4 h-4 flex-shrink-0"
-        set:html={getIcon(lang === "es" ? "english" : "spanish")}
-      />
-      <span
-        class="font-orbitron text-sm text-yellow-400 group-hover/item:text-yellow-300"
-      >
-        {lang === "es" ? "EN" : "ES"}
-      </span>
-    </a>
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const switcher = document.getElementById("language-switcher");
-    const dropdown = document.getElementById("language-dropdown");
-
-    if (!switcher || !dropdown) return;
-
-    // Toggle dropdown on click
-    switcher.addEventListener("click", () => {
-      dropdown.classList.toggle("opacity-0");
-      dropdown.classList.toggle("invisible");
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener("click", (e) => {
-      if (
-        !switcher.contains(e.target as Node) &&
-        !dropdown.contains(e.target as Node)
-      ) {
-        dropdown.classList.add("opacity-0", "invisible");
-      }
-    });
-  });
-</script>
+  <!-- Sliding dot -->
+  <div class={`absolute top-1 w-6 h-6 rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.6)] group-hover:shadow-[0_0_12px_rgba(250,204,21,0.8)] transition-all duration-300 ${isEnglish ? 'left-[calc(100%-1.75rem)]' : 'left-1'}`}></div>
+</a>
