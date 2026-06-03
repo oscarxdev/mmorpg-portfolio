@@ -11,7 +11,7 @@ const { t } = useTranslation("es");
 const token = Astro.locals.runtime?.env?.GITHUB_TOKEN || import.meta.env.GITHUB_TOKEN;
 let githubStats;
 try {
-  githubStats = await fetchGitHubStats("oscarcodedev", token);
+  githubStats = await fetchGitHubStats("oscarxdev", token);
 } catch (error) {
   console.error("Error fetching GitHub stats:", error);
   githubStats = {

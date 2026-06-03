@@ -8,9 +8,9 @@ import { getIcon, getLanguageColor, getLanguageIcon } from '@/lib/icons';
 const { t } = useTranslation('en');
 
 const token = Astro.locals.runtime?.env?.GITHUB_TOKEN || import.meta.env.GITHUB_TOKEN;
-const allRepos = await fetchGitHubRepos('oscarcodedev', token);
+const allRepos = await fetchGitHubRepos('oscarxdev', token);
 const repos = allRepos
-  .filter((repo) => repo.name !== 'oscarcodedev')
+  .filter((repo) => repo.name !== 'oscarxdev')
   .sort((a, b) => b.stargazers_count - a.stargazers_count);
 ---
 
@@ -42,7 +42,7 @@ const repos = allRepos
             Projects could not be loaded right now.
           </p>
           <a
-            href="https://github.com/oscarcodedev"
+            href="https://github.com/oscarxdev"
             target="_blank"
             rel="noopener noreferrer"
             class="mmorpg-button inline-flex items-center space-x-3 mt-6"
@@ -129,7 +129,7 @@ const repos = allRepos
 
       <div class="text-center mt-16">
         <a
-          href="https://github.com/oscarcodedev"
+          href="https://github.com/oscarxdev"
           target="_blank"
           rel="noopener noreferrer"
           class="mmorpg-button inline-flex items-center space-x-3"

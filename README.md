@@ -22,7 +22,7 @@ Portfolio personal de Oscar (OscarDev), desarrollador frontend expandiéndose al
 ## Instalación
 
 ```bash
-git clone https://github.com/oscarcodedev/mmorpg-portfolio.git
+git clone https://github.com/oscarxdev/mmorpg-portfolio.git
 cd mmorpg-portfolio
 pnpm install
 ```
@@ -61,6 +61,6 @@ Las traducciones viven en [src/i18n/translations.ts](src/i18n/translations.ts) y
 ## Contacto
 
 - **Web**: [kiridev.dev](https://kiridev.dev)
-- **GitHub**: [github.com/oscarcodedev](https://github.com/oscarcodedev)
+- **GitHub**: [github.com/oscarxdev](https://github.com/oscarxdev)
 - **Email**: [kiridev.contact@gmail.com](mailto:kiridev.contact@gmail.com)
 - **LinkedIn**: [linkedin.com/in/kiridev](https://linkedin.com/in/kiridev)
